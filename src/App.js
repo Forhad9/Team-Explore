@@ -6,8 +6,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import TeamInformation from './Components/TeamInformation/TeamInformation';
 import NoMatch from './Components/NoMatch/NoMatch';
+import TeamDetails from './Components/TeamDetails/TeamDetails';
 
 
 
@@ -24,7 +24,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/detail/:teamId">
-            <TeamInformation />
+           <TeamDetails></TeamDetails>
           </Route>
           <Route path="*">
             <NoMatch></NoMatch>

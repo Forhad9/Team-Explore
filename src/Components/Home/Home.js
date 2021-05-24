@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
+
+
 import TeamData from '../TeamData/TeamData';
+import image1 from '../../Photo/banner.jpg';
 
 const Home = () => {
     const [team, setTeam] = useState([]);
@@ -11,6 +14,9 @@ const Home = () => {
     }, [])
     return (
       <div style={{backgroundColor:"#16213e"}}>
+      <div style={{backgroundImage: `url(${image1}`,backgroundSize:"cover",height:"60vh", color:"white",position:"relative" }}>
+        <h1 style={{position:"absolute",top:"50%",left:"45%"}}>Team Explore</h1>
+      </div>
       <div className="container">
       <div className="row">
           {
