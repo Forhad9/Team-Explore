@@ -9,6 +9,7 @@ import image2 from '../../Photo/female.png';
 import image3 from '../../Photo/male.png';
 
 
+
 const TeamDetails = () => {
     const { teamId } = useParams();
     const [details, setDetails] = useState({});
@@ -20,11 +21,18 @@ const TeamDetails = () => {
             .then(data => setDetails(data.teams[0]))
     }, [teamId])
   
-
+    const backgroundStyle={
+        backgroundImage: `url(${image1}`,
+        backgroundSize: "cover",
+        height: "60vh",
+        color: "white",
+        textAlign: "center",
+        position: "relative" 
+    }
     return (
         <div style={{ backgroundColor: "#03002D" }}>
 
-            <div style={{ backgroundImage: `url(${image1}`, backgroundSize: "cover", height: "60vh", color: "white", textAlign: "center", position: "relative" }}>
+            <div style={backgroundStyle}>
                 <h1 style={{ position: "absolute", top: "30%", left: "40%" }}><img style={{ width: "150px" }} src={details.strTeamBadge} alt="" /></h1>
             </div>
 
@@ -57,9 +65,9 @@ const TeamDetails = () => {
 
 
                 <div className="text-center social-Icons mb-4">
-                    <a  href="{`${details.strFacebook}`}"><FontAwesomeIcon icon={faFacebook} /></a>
-                    <a  href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-                    <a  href="#"><FontAwesomeIcon icon={faYoutube} /></a>
+                    <a  href={`https://${details.strFacebook}`} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faFacebook} /></a>
+                    <a  href={`https://${details.strTwitter}`} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faTwitter} /></a>
+                    <a  href={`https://${details.strYoutube}`} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faYoutube} /></a>
                 </div>
 
 
