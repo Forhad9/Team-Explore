@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
-
 import TeamData from '../TeamData/TeamData';
 import image1 from '../../Photo/banner.jpg';
 
@@ -13,19 +11,25 @@ const Home = () => {
             .then(data => setTeam(data.teams))
     }, [])
     return (
-      <div style={{backgroundColor:"#16213e"}}>
-      <div style={{backgroundImage: `url(${image1}`,backgroundSize:"cover",height:"60vh", color:"white",position:"relative" }}>
-        <h1 style={{position:"absolute",top:"50%",left:"45%"}}>Team Explore</h1>
-      </div>
-      <div className="container">
-      <div className="row">
-          {
-              first9.map(td => <TeamData td={td}></TeamData>)
-          }
-      </div>
-  </div>
-      
-      </div>
+        <div style={{ backgroundColor: "#16213e" }}>
+
+
+            <div style={{ backgroundImage: `url(${image1}`, backgroundSize: "cover", height: "60vh", color: "white", position: "relative" }}>
+                <h1 style={{ position: "absolute", top: "50%", left: "45%" }}>Team Explore</h1>
+            </div>
+
+
+            <div className="container">
+
+                <div className="row">
+                    {
+                        first9.map(td => <TeamData td={td} key={td.idTeam}></TeamData>)
+                    }
+                </div>
+
+            </div>
+
+        </div>
     );
 };
 
