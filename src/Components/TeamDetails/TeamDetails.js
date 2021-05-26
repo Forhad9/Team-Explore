@@ -13,7 +13,7 @@ import MaleTeamImg from '../../Photo/male.png';
 const TeamDetails = () => {
     const { teamId } = useParams();
     const [details, setDetails] = useState({});
-    const { strTeamBadge, intFormedYear, strCountry, strGender, strStadiumDescription, strDescriptionEN } = details;
+    const { strTeamBadge, intFormedYear,strSport, strCountry, strGender, strStadiumDescription, strDescriptionEN } = details;
 
     useEffect(() => {
         const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${teamId}`;
@@ -46,7 +46,7 @@ const TeamDetails = () => {
                         <h1>{details.strTeam}</h1>
                         <h5><FontAwesomeIcon icon={faCalendarCheck} />   Founded: January 27,{intFormedYear}</h5>
                         <h5><FontAwesomeIcon icon={faFlag} />   Country: {strCountry}</h5>
-                        <h5><FontAwesomeIcon icon={faFutbol} /> Sports type: Football</h5>
+                        <h5><FontAwesomeIcon icon={faFutbol} /> Sports type: {strSport}</h5>
                         <h5><FontAwesomeIcon icon={faMars} />   Gender: {strGender}</h5>
                     </div>
 
