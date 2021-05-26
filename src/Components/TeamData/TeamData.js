@@ -8,7 +8,7 @@ const TeamData = (props) => {
   const { strTeamBadge, strTeam, idTeam } = props.td;
 
   return (
-    <div className="col-md-4 p-3">
+    <div className="col-md-6 col-lg-4 p-3">
 
       <div className="rounded  text-center bg-white pt-4 pb-4 mt-2">
         <img style={{ width: "50%" }} src={strTeamBadge} alt="" />

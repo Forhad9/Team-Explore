@@ -13,6 +13,7 @@ import image3 from '../../Photo/male.png';
 const TeamDetails = () => {
     const { teamId } = useParams();
     const [details, setDetails] = useState({});
+    const {strTeamBadge, intFormedYear, strCountry, strGender} =details;
 
     useEffect(() => {
         const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${teamId}`;
@@ -24,16 +25,13 @@ const TeamDetails = () => {
     const backgroundStyle={
         backgroundImage: `url(${image1}`,
         backgroundSize: "cover",
-        height: "60vh",
-        color: "white",
-        textAlign: "center",
-        position: "relative" 
+        height: "60vh"   
     }
     return (
         <div style={{ backgroundColor: "#03002D" }}>
 
             <div style={backgroundStyle}>
-                <h1 style={{ position: "absolute", top: "30%", left: "40%" }}><img style={{ width: "150px" }} src={details.strTeamBadge} alt="" /></h1>
+                <h1 className="team-div"><img style={{ width: "150px" }} src={strTeamBadge} alt="" /></h1>
             </div>
 
 
@@ -44,10 +42,10 @@ const TeamDetails = () => {
 
                     <div className="col-md-8">
                         <h1>{details.strTeam}</h1>
-                        <h5><FontAwesomeIcon icon={faSearchLocation}/>   Founded: January 27,{details.intFormedYear}</h5>
-                        <h5><FontAwesomeIcon icon={faFlag}/>   Country: {details.strCountry}</h5>
+                        <h5><FontAwesomeIcon icon={faSearchLocation}/>   Founded: January 27,{intFormedYear}</h5>
+                        <h5><FontAwesomeIcon icon={faFlag}/>   Country: {strCountry}</h5>
                         <h5><FontAwesomeIcon icon={faFutbol}/> Sports type: Football</h5>
-                        <h5><FontAwesomeIcon icon={faMars}/>   Gender: {details.strGender}</h5>
+                        <h5><FontAwesomeIcon icon={faMars}/>   Gender: {strGender}</h5>
                     </div>
 
                     <div className="col-md-4">

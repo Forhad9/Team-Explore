@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import TeamData from '../TeamData/TeamData';
 import image1 from '../../Photo/banner.jpg';
-import BounceLoader from "react-spinners/BounceLoader";
+import FadeLoader from "react-spinners/FadeLoader";
+import './Home.css';
 
 const Home = () => {
     const [team, setTeam] = useState([]);
@@ -17,20 +18,30 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setTeam(data.teams))
     }, [])
+    
+    const backgroundStyle ={
+        backgroundImage: `url(${image1}`,
+        backgroundSize: "cover",
+        height:"60vh", 
+        color: "white"
+
+    }
+
     return (
-        <div>
+        <div className="text-center">
             {
                 loading ?
-                    <BounceLoader
+                    <FadeLoader 
                         color={"#F37A24"}
                         loading={loading}
-                        size={50}
+                        size={60}
                     />
 
                     :
                     <div style={{ backgroundColor: "#16213e" }}>
-                        <div style={{ backgroundImage: `url(${image1}`, backgroundSize: "cover", height: "60vh", color: "white", position: "relative" }}>
-                            <h1 style={{ position: "absolute", top: "50%", left: "45%" }}>Team Explore</h1>
+
+                        <div style={backgroundStyle}>
+                            <h1 className="team-div">Team Explore</h1>
                         </div>
 
                     
