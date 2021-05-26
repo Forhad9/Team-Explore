@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './TeamDetails.css';
 import { useParams } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearchLocation, faFlag, faFutbol, faMars} from '@fortawesome/free-solid-svg-icons';
+import { faFlag, faFutbol, faMars, faCalendarCheck} from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import image1 from '../../Photo/banner.jpg';
-import image2 from '../../Photo/female.png';
-import image3 from '../../Photo/male.png';
+import FemaleTeamImg from '../../Photo/female.png';
+import MaleTeamImg from '../../Photo/male.png';
 
 
 
@@ -25,13 +25,15 @@ const TeamDetails = () => {
     const backgroundStyle={
         backgroundImage: `url(${image1}`,
         backgroundSize: "cover",
-        height: "60vh"   
+        height: "60vh",
+        filter:"brightness(70%)"  
     }
+    
     return (
         <div style={{ backgroundColor: "#03002D" }}>
 
             <div style={backgroundStyle}>
-                <h1 className="team-div"><img style={{ width: "150px" }} src={strTeamBadge} alt="" /></h1>
+                <h1 className="team-div"><img style={{ width: "180px" }} src={strTeamBadge} alt="" /></h1>
             </div>
 
 
@@ -42,14 +44,17 @@ const TeamDetails = () => {
 
                     <div className="col-md-8">
                         <h1>{details.strTeam}</h1>
-                        <h5><FontAwesomeIcon icon={faSearchLocation}/>   Founded: January 27,{intFormedYear}</h5>
+                        <h5><FontAwesomeIcon icon={faCalendarCheck}/>   Founded: January 27,{intFormedYear}</h5>
                         <h5><FontAwesomeIcon icon={faFlag}/>   Country: {strCountry}</h5>
                         <h5><FontAwesomeIcon icon={faFutbol}/> Sports type: Football</h5>
                         <h5><FontAwesomeIcon icon={faMars}/>   Gender: {strGender}</h5>
                     </div>
 
                     <div className="col-md-4">
-                        <img className="img-fluid" src={image3} alt="" />
+                        {
+                            strGender === 'Female' ? <img className="img-fluid" src={FemaleTeamImg} alt="..." />
+                                                 : <img className="img-fluid" src={MaleTeamImg} alt="..." />
+                        }
                     </div>
 
                 </div>
