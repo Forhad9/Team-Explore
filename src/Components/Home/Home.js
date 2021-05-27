@@ -31,12 +31,15 @@ const Home = () => {
         <div className="text-center">
             {
                 loading ?
-                    <FadeLoader 
+                   <div className="loader">
+                      <FadeLoader 
+                        
                         color={"#F37A24"}
                         loading={loading}
                         size={60}
                     />
 
+                   </div>
                     :
                     <div style={{ backgroundColor: "#16213e" }}>
 
