@@ -1,5 +1,5 @@
 
-Open this link [https://brave-noyce-17d4b5.netlify.app/](https://brave-noyce-17d4b5.netlify.app/) to view it in the browser.\
+Open this link [https://brave-noyce-17d4b5.netlify.app/](https://brave-noyce-17d4b5.netlify.app/)  to view it in the browser.
 
 ## Added features for Team Explore
 Team Explore is a Reactjs based app.\
