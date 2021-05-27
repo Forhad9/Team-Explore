@@ -33,7 +33,6 @@ const Home = () => {
                 loading ?
                    <div className="loader">
                       <FadeLoader 
-                        
                         color={"#F37A24"}
                         loading={loading}
                         size={60}
